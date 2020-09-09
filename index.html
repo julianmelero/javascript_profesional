@@ -22,32 +22,8 @@
       <button>Play/Pause</button>
     </main>
 
-    <script>
-      function MediaPlayer(config) {
-        this.media = config.el;
-      }
-
-      MediaPlayer.prototype.play = function() {
-        this.media.play();
-      };
-
-      MediaPlayer.prototype.pause = function() {
-        this.media.pause();
-      };
-
-      MediaPlayer.prototype.togglePlay = function() {
-        if (this.media.paused) {
-          this.play();
-        } else {
-          this.pause();
-        }
-      };
-
-      const video = document.querySelector('video');
-      const player = new MediaPlayer({ el: video });
-
-      const button = document.querySelector('button');
-      button.onclick = () => player.togglePlay();
-    </script>
+    <script src="./assets/index.js"></script>
+    <!-- En <script> podemos usar async o defer. Async ejecuta el scrip de forma asíncrona
+      pero detiene el DOM después del fetc, mientras que defer ejecuta el DOM y después el script -->
   </body>
 </html>
