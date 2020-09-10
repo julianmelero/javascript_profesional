@@ -1,4 +1,4 @@
-import AutoPlay from '../plugins/AutoPlay';
+import AutoPlay from './plugins/AutoPlay.js';
 function MediaPlayer(config) {
     this.media = config.el;
     // Usamos plugin
@@ -28,6 +28,10 @@ function MediaPlayer(config) {
       this.pause();
     }
   };
+
+  MediaPlayer.prototype.mute = function () {
+    this.media.muted = true
+  }
 
   const video = document.querySelector('video');
   const player = new MediaPlayer({ el : video, plugins : [
